@@ -1,0 +1,163 @@
+\documentclass[12pt,a4paper]{report}
+%setting horizontal and vertical margin
+\usepackage[a4paper,hmargin={3cm,2.5cm},vmargin={2.5cm,2.5cm}]{geometry}
+% To embedd images
+\usepackage[pdftex]{graphicx}
+% for url entries
+\usepackage{url}
+% for pdf attributes
+\usepackage[dvips, bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={HTML 5 Seminar Report}, pdfauthor={Jishnu Mohan}, pdfsubject={HTML5}, pdfkeywords={html, html5}]{hyperref}
+% for border
+\usepackage{fancybox}
+\usepackage{pslatex}
+
+\begin{document}
+
+% Settingup fancybox border
+\fancypage{\setlength{\fboxsep}{10pt}\doublebox}{}
+%Rename "Bibliography" to "References"
+\renewcommand\bibname{References} 
+
+
+% following is the title page
+\begin{titlepage}
+\begin{center}
+\textup{\large Project Report}\\[1.0cm]
+
+\begin{LARGE}{\textbf {My Project Report Title}}\end{LARGE}\\[3.0cm]
+
+\vfill
+\begin{large}J\textbf{ishnu Mohan}\\thecodecracker.com \\\end{large}
+\vfill
+
+\LARGE{Department of Information Technology}\\
+\normalsize
+\textsc{MES College of Engineering}\\
+\vspace{0.5cm}
+\end{center}
+\end{titlepage}
+
+% set numbering as roman numbers.
+\pagenumbering{roman} 
+\begin{abstract}
+Here is my abstract report.
+\end{abstract}
+
+\newpage
+% this will auto generate table of contents based on chapeters and sub sections
+\tableofcontents
+% this will auto generate list of figures based on their captions
+\listoffigures
+
+\newpage
+% Start aracbic numbering
+\pagenumbering{arabic}
+
+\chapter{First Chapter}
+% delete following contents
+HTML is a simple mark-up language used to create hypertext documents that are can be read on any computer.
+A markup language is a set of markup tags, and HTML uses markup tags to describe web pages.
+HTML is written in the form of HTML elements consisting of tags, enclosed in angle brackets
+% $ $ can be used for some breaking characters
+(like $<$html$>$), 
+within the web page content. HTML tags normally come in pairs like $<$h1$>$ and $<$/h1$>$. 
+The first tag in a pair is the start tag, the second tag is the end tag (they are also called opening tags and closing tags).
+HTML elements form the building blocks of all websites. 
+HTML allows images and objects to be embedded and can be used to create interactive forms. 
+It provides a means to create structured documents by denoting structural semantics for text such as headings, 
+paragraphs, lists, links, quotes and other items. It can embed scripts in languages such as 
+% \\ is used for next line
+JavaScript \\ which affect the behavior of HTML webpages.
+Web browsers can also refer to Cascading Style Sheets (CSS) to define the appearance and layout 
+of text and other material. The W3C, maintainer of both the HTML and the CSS standards, encourages 
+the use of CSS over explicitly presentational HTML markup.
+
+HTML5 is currently under development, as the next major revision of the HTML standard. Like its immediate predecessors, 
+HTML 4.01 and XHTML 1.1, HTML5 is a standard for structuring and presenting content on the World Wide Web.
+The new standard incorporates features like video playback and drag-and-drop that have been previously dependent 
+on third-party browser plug-ins such as Adobe Flash and Microsoft Silverlight.
+
+In this report, I would like to explain about history, new structural elements, tags, 
+link relations, audio-video, canvas, forms, svg, javascript api of HTML5 and css3.
+
+
+\chapter{Second Chapter}
+HTML has has evolved from a simple language with a small number of tags to a complex system of mark-up, 
+enabling authors to create all-singing-and-dancing Web pages complete with animated images, sound and all manner of gimmicks. 
+This chapter tells you something about the Web's early days, HTML, companies and organizations 
+who contributed to HTML+, HTML 2, HTML 3.2, HTML 4 and finally HTML 5.
+
+\section{Lists}
+% List with description
+\begin{description}
+ \item[1995 November]$:$ \\HTML 2.0 was published
+  % Sublist
+  % Bulleted list
+  \begin{itemize}
+   \item Strict, in which deprecated elements are forbidden,
+   \item Transitional, in which deprecated elements are allowed,
+   \item Frameset, in which mostly only frame related elements are allowed;
+  \end{itemize}
+ \item[1998 April]$:$ \\HTML 4.0 was reissued with minor edits without incrementing the version number.
+  % Enumerated list
+  \begin{enumerate}
+  \item 
+  \end{enumerate}
+ \item[2008 January]$:$ \\HTML 5 Working Draft was published by W3C
+ \end{description}
+
+\chapter{HTML5}
+Before we dive into the new tags, consider the structure of an average web page, which (generally) looks something like this:
+% Use verbatim to display codes
+\begin{verbatim}
+<html>
+    <head>
+    ...stuff...
+    </head>
+    <body>
+        <div id="header">
+            <h1>My Site</h1>
+        </div>
+        <div id="nav">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div id=content>
+            <h1>My Article</h1>
+            <p>...</p>
+        </div>
+        <div id="footer">
+            <p>...</p>
+        </div>
+    </body>
+</html>\end{verbatim} 
+In the above example, we’ve added IDs to all our structural divs. This is a fairly common practice among savvy designers. The purpose is two-fold — first, the IDs provide hooks which can be used to apply styles to specific sections of the page and, second, the IDs serve as a primitive, pseudo-semantic structure. Smart parsers will look at the ID attributes on a tag and try to guess what they mean, but it’s hard when ID names are different on every site.
+And that’s where the new structural tags come in.
+
+Recognizing that these IDs were common practice, the authors of HTML 5 have gone a step further and made some of these elements into their own tags. Here’s a quick overview of the new structural tags available in HTML 5:
+
+\chapter{Conclusion}
+HTML5 and CSS3 are clearly the future of the web. At first, they're most likely to gain traction on mobile devices, and anyone creating content in that realm should be learning about these technologies.
+
+HTML5 is still under development. So it have some bugs that yet to be fixed and standardization of tags and formats to be done.
+
+While a lot of the new stuff in HTML 5 isn’t widely supported, it’s important to remember one of HTML 5’s core principles is compatibility, eg with current content. Apart from a few minor differences most of the HTML 4/XHTML 1 spec is in HTML 5. For the new parts of HTML 5 (such as structural elements) support can often be added today via CSS and Javascript. Finally, modern browsers (and even IE) are implementing the HTML 5 spec now. While full compliance will take a while, there’s a lot that’s already usable, and support is increasing.
+
+2012 is expected year for the complete draft of HTML5. HTML5 is an exciting technology for creating new and powerful browser-based applications. These applications can even run on smartphones. There's no reason to delay jumping into HTML5 web/application development.
+
+
+
+\addcontentsline{toc}{chapter}{References}
+% references
+\begin{thebibliography}{2}
+
+\bibitem{shortcode}title \ \url{website address} \ \textit{autor or some text}
+
+\bibitem{whatwg}WHATWG,\ \url{http://whatwg.org/html5}
+
+\end{thebibliography}
+
+\end{document}
